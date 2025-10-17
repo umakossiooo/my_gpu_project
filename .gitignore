@@ -1,11 +1,34 @@
-# Prerequisites
-/build/
-/install/
-**/.DS_Store
-**/Thumbs.db
+###############################
+# General OS/IDE/Editor files #
+###############################
+.DS_Store
+Thumbs.db
+
+#########################
+# Build and Install Folders
+#########################
+build/
+install/
 log/
 src/build/
 src/install/
 src/log/
+
+#########################
+# Gazebo Models
+#########################
 src/car_navigation/gazebo_models/
-**/gazebo_models/
+gazebo_models/
+
+############################################
+# Worlds: Ignore all except home.sdf
+############################################
+src/car_nav2/worlds/*
+!src/car_nav2/worlds/home.sdf
+
+#########################
+# Node Modules (if any)
+#########################
+node_modules/
+src/car_nav2/worlds/*
+!src/car_nav2/worlds/home.sdf
