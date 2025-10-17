@@ -1,0 +1,24 @@
+# This file is now configured for modern, hardware-accelerated rendering via WSLg.
+# It leverages the configuration from your Dockerfile for direct GPU access.
+services:
+  simulation:
+    build: .
+    image: my-gpu-simulation-env
+    stdin_open: true
+    tty: true
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+            # This section is correct and necessary for both CUDA compute and OpenGL rendering.
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+    volumes:
+      # This volume is essential for WSLg to communicate with the container's GUI.
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      # This is your project volume, left exactly as you had it.
+      - ./car_navigation:/workspace/car_navigation
+
