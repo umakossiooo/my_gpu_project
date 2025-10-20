@@ -21,5 +21,4 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       # This is your project volume, left exactly as you had it.
       - ./car_navigation:/workspace/car_navigation
-      - ./ackermann_sim/src/ackermann-vehicle-gzsim-ros2:/workspace/ackermann_sim/src/ackermann-vehicle-gzsim-ros2
 
